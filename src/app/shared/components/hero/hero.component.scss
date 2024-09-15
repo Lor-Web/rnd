@@ -1,0 +1,23 @@
+@import "../../../styles/mixins/font.scss";
+@import "../../../styles/mixins/background.scss";
+@import "../../../styles/mixins/adaptive.scss";
+
+.hero {
+	height: 940px;
+	background-image: url("/images/hero-demo.png");
+	@include contain-background();
+
+	@include for-size(index_S) {
+		height: 640px;
+	}
+
+	&-title {
+		margin: 0;
+		@include font-size(80, 88);
+		font-weight: 500;
+
+		@include for-size(index_S) {
+			@include font-size(40, 48);
+		}
+	}
+}

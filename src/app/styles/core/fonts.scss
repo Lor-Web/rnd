@@ -1,0 +1,18 @@
+@import "../mixins/font.scss";
+
+@include font-face("IBMPlexSans", "./app/assets/fonts/IBMPlexSans-Regular");
+
+@include font-face("IBMPlexSans", "./app/assets/fonts/IBMPlexSans-Thin", 100);
+@include font-face(
+	"IBMPlexSans",
+	"./app/assets/fonts/IBMPlexSans-ExtraLight",
+	200
+);
+@include font-face("IBMPlexSans", "./app/assets/fonts/IBMPlexSans-Light", 300);
+@include font-face("IBMPlexSans", "./app/assets/fonts/IBMPlexSans-Medium", 500);
+@include font-face(
+	"IBMPlexSans",
+	"./app/assets/fonts/IBMPlexSans-SemiBold",
+	600
+);
+@include font-face("IBMPlexSans", "./app/assets/fonts/IBMPlexSans-Bold", 700);

@@ -1,0 +1,91 @@
+@import "../../styles/core/variables.scss";
+@import "../../styles/mixins/font.scss";
+@import "../../styles/mixins/adaptive.scss";
+
+:host {
+	display: block;
+	width: 100vw;
+	position: sticky;
+	z-index: 100;
+	top: 0;
+}
+
+.header {
+	padding: 0 40px;
+	display: flex;
+	align-items: center;
+	height: 115px;
+	@include font-size(17, 24);
+
+	// Glassmorphism
+	background: rgba(21, 21, 21, 0.25);
+	backdrop-filter: blur(4px);
+	-webkit-backdrop-filter: blur(4px);
+	// если не нужно, то убрать верхние 3 строчки
+
+	@include for-size(index_M) {
+		padding: 0 16px;
+		height: 80px;
+	}
+
+	&-logo {
+		margin-right: 40px;
+
+		@include for-size(index_M) {
+			margin-right: auto;
+		}
+	}
+
+	&-navigation {
+		margin-right: auto;
+
+		@include for-size(index_M) {
+			display: none;
+		}
+
+		&__list {
+			display: flex;
+			gap: 24px;
+
+			&-item .list-item__link {
+				text-decoration: none;
+			}
+		}
+	}
+
+	&-phone {
+		margin-right: 20px;
+		text-decoration: none;
+
+		@include for-size(index_M) {
+			display: none;
+		}
+	}
+
+	&-email {
+		margin-right: 40px;
+		text-decoration: none;
+
+		@include for-size(index_M) {
+			display: none;
+		}
+	}
+
+	&-burger-menu {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		width: 48px;
+		height: 22px;
+		background-color: transparent;
+		border: none;
+		outline: none;
+		cursor: pointer;
+
+		span {
+			width: 100%;
+			height: 2px;
+			background-color: $grey;
+		}
+	}
+}

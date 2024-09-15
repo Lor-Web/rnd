@@ -1,0 +1,15 @@
+@mixin for-size($size) {
+	@if $size == index_L {
+		@media (max-width: calc(1920px - 1px)) {
+			@content;
+		}
+	} @else if $size == index_M {
+		@media (max-width: calc(1280px - 1px)) {
+			@content;
+		}
+	} @else if $size == index_S {
+		@media (max-width: calc(960px - 1px)) {
+			@content;
+		}
+	}
+}

@@ -1,0 +1,87 @@
+@import "../../../../../styles/core/variables.scss";
+@import "../../../../../styles/mixins/font.scss";
+@import "../../../../../styles/mixins/adaptive.scss";
+@import "../../../../../styles/mixins/section-spaces.scss";
+@import "../../../../../styles/mixins/background.scss";
+
+:host {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+.card {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 100%;
+	background-color: $bg-card;
+
+	&-header {
+		padding: 24px;
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
+
+		@include for-size(index_S) {
+			padding: 16px;
+			gap: 8px;
+		}
+	}
+
+	&-footer {
+		position: relative;
+		width: 100%;
+		height: 280px;
+
+		@include for-size(index_S) {
+			height: 179px;
+		}
+	}
+
+	&-label {
+		margin: 0;
+		max-width: 50%;
+		@include font-size(24, 32);
+		font-weight: 400;
+
+		@include for-size(index_S) {
+			@include font-size(18, 24);
+		}
+	}
+
+	&-description {
+		color: $grey;
+		@include font-size(18, 32);
+		text-overflow: ellipsis;
+		overflow: hidden;
+		display: -webkit-box;
+		line-clamp: 2;
+		-webkit-line-clamp: 2;
+		-webkit-box-orient: vertical;
+
+		@include for-size(index_S) {
+			@include font-size(14, 20);
+		}
+	}
+
+	&-link {
+		position: absolute;
+		right: 24px;
+		bottom: 24px;
+		display: block;
+		width: 60px;
+		height: 60px;
+		background-color: $bg-card;
+		z-index: 1;
+		background-image: url("/icons/arrow-right.svg");
+		@include contain-background();
+
+		@include for-size(index_S) {
+			right: 16px;
+			bottom: 16px;
+			width: 32px;
+			height: 32px;
+		}
+	}
+}

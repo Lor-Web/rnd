@@ -1,0 +1,89 @@
+@import "../../../styles/core/variables.scss";
+@import "../../../styles/mixins/font.scss";
+@import "../../../styles/mixins/adaptive.scss";
+@import "../../../styles/mixins/section-spaces.scss";
+
+:host {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+.banner {
+	position: relative;
+	width: 100%;
+	@include section-spaces();
+
+	&-info {
+		padding: 40px;
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
+		position: absolute;
+		z-index: 1;
+
+		@include for-size(index_S) {
+			padding: 24px;
+		}
+
+		&__label {
+			@include font-size(18, 32);
+
+			@include for-size(index_S) {
+				@include font-size(14, 20);
+			}
+		}
+
+		&__title {
+			margin: 0;
+			max-width: 40%;
+			@include font-size(40, 48);
+			font-weight: 500;
+
+			@include for-size(index_S) {
+				max-width: 100%;
+				font-weight: 400;
+				@include font-size(24, 32);
+			}
+		}
+
+		&__description {
+			margin-bottom: calc(40px - 16px);
+			max-width: 60%;
+			@include font-size(18, 32);
+
+			@include for-size(index_S) {
+				max-width: 100%;
+				@include font-size(14, 20);
+			}
+		}
+
+		&__button {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: fit-content;
+			min-width: 118px;
+			height: 48px;
+			color: $text-base;
+			background-color: $blue;
+			border: none;
+			border-radius: 4px;
+			outline: none;
+			cursor: pointer;
+			@include font-size(16, 32);
+		}
+	}
+
+	&-image {
+		width: 100%;
+		height: 640px;
+		position: relative;
+		border-radius: 8px;
+		overflow: hidden;
+
+		@include for-size(index_S) {
+			height: 480px;
+		}
+	}
+}

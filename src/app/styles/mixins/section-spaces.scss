@@ -1,0 +1,9 @@
+@import "./adaptive.scss";
+
+@mixin section-spaces() {
+	padding: 80px 0 120px;
+
+	@include for-size(index_S) {
+		padding: 40px 0 40px;
+	}
+}

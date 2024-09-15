@@ -1,0 +1,22 @@
+<article class="card">
+	<header class="card-header">
+		<h3 class="card-label">
+			{{ label() }}
+		</h3>
+
+		<p class="card-description">
+			{{ description() }}
+		</p>
+	</header>
+	<footer class="card-footer">
+		<a href="#" class="card-link"></a>
+		@if (image()) {
+		<img
+			class="card-image"
+			[ngSrc]="image() ?? ''"
+			alt="Изображение карточки"
+			fill
+		/>
+		}
+	</footer>
+</article>

@@ -1,0 +1,157 @@
+@import "../../../styles/core/variables.scss";
+@import "../../../styles/mixins/font.scss";
+@import "../../../styles/mixins/adaptive.scss";
+@import "../../../styles/mixins/section-spaces.scss";
+@import "../../../styles/mixins/background.scss";
+@import "../../../styles/mixins/pseudo.scss";
+
+.tabs {
+	@include section-spaces();
+	@include for-size(index_M) {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&-label {
+		margin: 0 0 40px 0;
+		@include font-size(40, 48);
+		font-weight: 500;
+
+		@include for-size(index_S) {
+			margin: 0 0 16px 0;
+			@include font-size(24, 32);
+		}
+	}
+
+	&-wrapper {
+		display: flex;
+		gap: 24px;
+
+		@include for-size(index_M) {
+			flex-direction: column;
+		}
+	}
+
+	&-nav {
+		width: 100%;
+
+		.nav-list {
+			display: flex;
+			flex-direction: column;
+			gap: 24px;
+
+			@include for-size(index_M) {
+				flex-direction: row;
+				overflow: scroll;
+			}
+
+			&__item {
+				padding: 8px 0;
+				color: $text-neutral;
+				cursor: pointer;
+				transition: color 0.2s ease;
+				white-space: nowrap;
+				@include font-size(24, 32);
+
+				&-active {
+					color: $text-base;
+				}
+
+				&:first-child {
+					@include for-size(index_M) {
+						margin-left: 24px;
+					}
+
+					@include for-size(index_S) {
+						margin-left: 16px;
+					}
+				}
+
+				&:last-child {
+					@include for-size(index_M) {
+						margin-right: 24px;
+					}
+
+					@include for-size(index_S) {
+						margin-right: 16px;
+					}
+				}
+			}
+		}
+	}
+
+	&-content {
+		position: relative;
+		display: flex;
+		flex-shrink: 0;
+		width: 776px;
+		min-height: 480px;
+		border-radius: 8px;
+		overflow: hidden;
+		@include contain-background();
+
+		@include for-size(index_M) {
+			margin: 0 auto;
+			width: calc(100% - (24px * 2));
+		}
+
+		@include for-size(index_S) {
+			width: calc(100% - (16px * 2));
+		}
+
+		&-info {
+			padding: 40px;
+			position: relative;
+			align-self: flex-end;
+			display: flex;
+			flex-direction: column;
+			gap: 24px;
+			z-index: 10;
+
+			@include for-size(index_S) {
+				padding: 24px;
+				gap: 16px;
+			}
+
+			&__label {
+				margin: 0;
+				@include font-size(24, 32);
+				font-weight: 400;
+
+				@include for-size(index_S) {
+					@include font-size(17, 24);
+				}
+			}
+
+			&__description {
+				@include font-size(18, 32);
+
+				@include for-size(index_S) {
+					@include font-size(14, 24);
+				}
+			}
+		}
+
+		&::after {
+			@include pseudo();
+			background: linear-gradient(
+				180deg,
+				rgba(26, 26, 27, 0) 20%,
+				#1e1e1e 100%
+			);
+			z-index: 1;
+		}
+	}
+
+	.container {
+		@include for-size(index_M) {
+			margin: unset;
+		}
+	}
+
+	.container-unset {
+		@include for-size(index_M) {
+			padding: 0;
+		}
+	}
+}

@@ -1,0 +1,53 @@
+<header class="header">
+	<picture class="header-logo">
+		<source
+			srcset="images/logo-rnd-mob.svg"
+			width="107"
+			height="47"
+			priority="true"
+			alt="Логотип"
+			media="(max-width: 1279px)"
+		/>
+
+		<source
+			srcset="images/logo-rnd.svg"
+			width="108"
+			height="67"
+			priority="true"
+			alt="Логотип"
+			media="(min-width: 1280px)"
+		/>
+
+		<img
+			ngSrc="images/logo-rnd.svg"
+			width="108"
+			height="67"
+			priority="true"
+			alt="Логотип"
+		/>
+	</picture>
+
+	<nav class="header-navigation">
+		<ul class="header-navigation__list">
+			@for (link of navigationLinks; track link) {
+			<li class="header-navigation__list-item">
+				<a class="list-item__link color-white" href="">{{ link }}</a>
+			</li>
+			}
+		</ul>
+	</nav>
+
+	<a class="header-phone color-white" href="tel:+79958843995">
+		+7 995 884-39-95
+	</a>
+
+	<a class="header-email color-white" href="mailto:info@rnd-t.ru">
+		{{ "info@rnd-t.ru" }}
+	</a>
+
+	<button class="header-burger-menu">
+		<span></span>
+		<span></span>
+		<span></span>
+	</button>
+</header>

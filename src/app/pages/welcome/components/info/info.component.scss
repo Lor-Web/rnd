@@ -1,0 +1,63 @@
+@import "../../../../styles/mixins/adaptive.scss";
+@import "../../../../styles/mixins/font.scss";
+@import "../../../../styles/mixins/section-spaces.scss";
+@import "../../../../styles/core/variables.scss";
+
+.info {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	@include section-spaces();
+
+	@include for-size(index_M) {
+		flex-direction: column;
+		gap: 24px;
+	}
+
+	&-description {
+		max-width: 776px;
+		@include font-size(40, 48);
+		font-weight: 500;
+
+		@include for-size(index_M) {
+			max-width: 100%;
+		}
+
+		@include for-size(index_S) {
+			@include font-size(18, 24);
+		}
+
+		&-mark {
+			color: $blue;
+			background-color: transparent;
+		}
+	}
+
+	&-block {
+		display: flex;
+		flex-direction: column;
+		gap: 24px;
+
+		@include for-size(index_M) {
+			width: 100%;
+			flex-direction: row;
+			justify-content: space-between;
+		}
+
+		@include for-size(index_S) {
+			flex-direction: column;
+		}
+
+		&__description {
+			padding: 24px;
+			max-width: 328px;
+			@include font-size(18, 32);
+			background-color: $bg-text;
+			border-radius: 0 10px 10px 10px;
+
+			@include for-size(index_S) {
+				@include font-size(14, 20);
+			}
+		}
+	}
+}

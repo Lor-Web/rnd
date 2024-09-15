@@ -1,0 +1,20 @@
+@import "../../styles/core/variables.scss";
+@import "../../styles/mixins/font.scss";
+@import "../../styles/mixins/adaptive.scss";
+
+.footer {
+	padding: 40px;
+	box-sizing: border-box;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 4px;
+	color: $text-neutral;
+	text-align: center;
+	@include font-size(11, 20);
+
+	@include for-size(index_S) {
+		padding: 16px;
+	}
+}

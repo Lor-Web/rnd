@@ -1,0 +1,32 @@
+@import "./app/styles/core/core.scss";
+@import "./app/styles/mixins/mixins.scss";
+
+body {
+	font-family: "IBMPlexSans";
+	color: $text-base;
+	background-color: $bg-base;
+}
+
+.color-white {
+	color: $text-base;
+}
+
+.container {
+	margin: 0 auto;
+	padding: 0 24px;
+	max-width: 1224px;
+	height: 100%;
+	box-sizing: border-box;
+
+	@include for-size(index_L) {
+		padding: 0 52px;
+	}
+
+	@include for-size(index_M) {
+		padding: 0 24px;
+	}
+
+	@include for-size(index_S) {
+		padding: 0 16px;
+	}
+}

@@ -1,0 +1,36 @@
+<section class="tabs">
+	<div class="container">
+		<h2 class="tabs-label">{{ label() }}</h2>
+	</div>
+
+	<div class="container container-unset">
+		<div class="tabs-wrapper">
+			<nav class="tabs-nav">
+				<ul class="nav-list">
+					@for (tab of tabs(); track tab.id) {
+					<li
+						class="nav-list__item"
+						[ngClass]="{ 'nav-list__item-active': activeTab()?.id === tab.id }"
+						(click)="changeTab(tab)"
+					>
+						{{ tab.label }}
+					</li>
+					}
+				</ul>
+			</nav>
+
+			<div class="tabs-content">
+				<div class="tabs-content-info">
+					<h3 class="tabs-content-info__label">
+						{{ activeTab()?.content?.label }}
+					</h3>
+					<p class="tabs-content-info__description">
+						{{ activeTab()?.content?.description }}
+					</p>
+				</div>
+
+				<img [ngSrc]="activeTab()?.content?.img ?? ''" alt="Изображение" fill />
+			</div>
+		</div>
+	</div>
+</section>

@@ -1,0 +1,88 @@
+@import "../../../styles/core/variables.scss";
+@import "../../../styles/mixins/font.scss";
+@import "../../../styles/mixins/adaptive.scss";
+@import "../../../styles/mixins/section-spaces.scss";
+
+.cards {
+	display: flex;
+	flex-direction: column;
+	gap: 40px;
+	@include section-spaces();
+
+	// стили контейнера
+	margin: 0 auto;
+	max-width: 1224px;
+	box-sizing: border-box;
+
+	@include for-size(index_S) {
+		gap: 24px;
+	}
+
+	&-label {
+		margin: 0;
+		padding: 0 24px;
+		@include font-size(40, 48);
+		font-weight: 500;
+
+		@include for-size(index_L) {
+			padding: 0 52px;
+		}
+
+		@include for-size(index_M) {
+			padding: 0 24px;
+		}
+
+		@include for-size(index_S) {
+			padding: 0 16px;
+			@include font-size(22, 28);
+		}
+	}
+
+	&-list {
+		display: flex;
+		gap: 24px;
+		overflow: scroll;
+
+		&__item {
+			min-width: 376px;
+			max-width: 376px;
+
+			@include for-size(index_S) {
+				min-width: 240px;
+				max-width: 240px;
+			}
+
+			&:first-child {
+				margin-left: 24px;
+
+				@include for-size(index_L) {
+					margin-left: 52px;
+				}
+
+				@include for-size(index_M) {
+					margin-left: 24px;
+				}
+
+				@include for-size(index_S) {
+					margin-left: 16px;
+				}
+			}
+
+			&:last-child {
+				margin-right: 24px;
+
+				@include for-size(index_L) {
+					margin-right: 52px;
+				}
+
+				@include for-size(index_M) {
+					margin-right: 24px;
+				}
+
+				@include for-size(index_S) {
+					margin-right: 16px;
+				}
+			}
+		}
+	}
+}

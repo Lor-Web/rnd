@@ -1,0 +1,15 @@
+<section class="cards">
+	<h2 class="cards-label">{{ sectionLabel() }}</h2>
+
+	<ul class="cards-list">
+		@for (card of cards(); track card.id) {
+		<li class="cards-list__item">
+			<rnd-card
+				[label]="card.label"
+				[description]="card.description"
+				[image]="card.img"
+			></rnd-card>
+		</li>
+		}
+	</ul>
+</section>
